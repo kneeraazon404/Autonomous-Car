@@ -38,4 +38,3 @@ while motSpeed > 0:
     motSpeed -= 1
 
     direction = -direction
-
