@@ -1,56 +1,88 @@
-# Autonomous-Car
+# Autonomous Vehicle System: Perception, Decision-Making, and Dynamics
 
-Requirements
+![Autonomous Vehicle Concept](https://via.placeholder.com/800x400.png?text=Autonomous+Vehicle+System)  
+*Example: Autonomous vehicle perception and control pipeline.*
 
-environment reading
-driving and
-decision making
+A comprehensive repository for understanding the technical components of autonomous vehicles, including **environment perception**, **decision-making**, **vehicle dynamics**, and **safety assurance**. This project aligns with SAE automation levels (0–5) and integrates key research on kinetic/dynamic modeling, ODD, and OEDR.
 
-five levels or Automation
+---
 
-0. no automation
-1. Longitudinal or lateral
-2. lateral and longtudinal both
-3. OEDR object and event detection and responese at small level
-4. OEDR that can handle all the object detection and events handling => emergencies
-5. Fully autonomous ...not made one yet? or maybe at some level
+## Table of Contents
+- [SAE Levels of Automation](#sae-levels-of-automation)
+- [Technical Components](#technical-components)
+  - [Perception](#perception)
+  - [Decision-Making](#decision-making)
+  - [Vehicle Dynamics](#vehicle-dynamics)
+  - [Safety Assurance](#safety-assurance)
+- [Operational Design Domain (ODD)](#operational-design-domain-odd)
+- [References](#references)
+- [Contributing](#contributing)
 
-#ODD===Operational Design Domain
+---
 
-Perception
-Supplementary Reading: Requirements for Perception
-To learn more about the KITTI Vision Benchmark Suite, check out this link: http://www.cvlibs.net/datasets/kitti/
+## SAE Levels of Automation
+| Level | Description | Key Capabilities |
+|-------|-------------|------------------|
+| **0** | No Automation | Human controls all tasks. |
+| **1** | Longitudinal **or** Lateral Control | Assistive systems (e.g., adaptive cruise control). |
+| **2** | Combined Longitudinal/Lateral Control | Partial automation (e.g., Tesla Autopilot). |
+| **3** | Conditional Automation | OEDR* for limited scenarios (e.g., traffic jam assist). |
+| **4** | High Automation | Full OEDR in defined ODD; handles emergencies. |
+| **5** | Full Automation | Unrestricted ODD; no human intervention required. |
 
-# Third Week
+*OEDR: Object/Event Detection & Response
 
-Lesson 1: Safety Assurance for Self-Driving Vehicles
+---
 
-Driving to safety
-https://rand.org/pubs/research_reports/RR1478.html
+## Technical Components
 
-# Week Fourth
+### Perception
+- **Objective**: Interpret environment via sensors (LiDAR, cameras, radar).
+- **Dataset**: [KITTI Vision Benchmark Suite](http://www.cvlibs.net/datasets/kitti/) for 3D object detection.
+- **Key Models**: Semantic segmentation, SLAM, sensor fusion.
 
-Models of Mobile Robots in the Plane:
-https://d3c33hcgiwev3.cloudfront.net/csKJTCDXEemj-RKX93anOA_72d8f77020d711e9ace9b31057616ac0_Models-of-Mobile-Robots-in-the-Plane.pdf?Expires=1593648000&Signature=ITCKbCkOZJkLqG-5dVP7hye6fdHC9yCWwDAdKG3tS65YQe92zkU6l2aN8P1x2IKJAZaOMKrmitwmFf-mH1UBPUY9aC3g4iCL2fpfXbgOCZEXN~hc-Zbk6vBT52XOVmcMxQPnZpx4Ppb5LiJbIh94qisKULAUOLmO5oxQP1mPHDA_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A
+### Decision-Making
+- **Requirements**: Path planning, risk assessment, real-time response.
+- **Algorithms**: Markov Decision Processes (MDPs), Reinforcement Learning (RL).
 
-# Three points on kinetic modelling
+### Vehicle Dynamics
+#### Longitudinal Dynamics
+- Throttle/brake control for speed regulation.  
+  **Resource**: [Longitudinal Vehicle Dynamics (Springer)](https://link.springer.com/chapter/10.1007%2F978-1-4614-1433-9_4)
 
-https://d3c33hcgiwev3.cloudfront.net/vjVDuyDXEemj-RKX93anOA_be4b8ab020d711e9a1134155eeec67a0_Lateral-Vehicle-Dynamics.pdf?Expires=1593648000&Signature=Zy-euUgyW6QSFt5NykcoGYipkimPUvvUUKu-ths0Ie2oDFQERe8J0Di3NR0F0iKUPzc3m5hMmzq978FfJf-byuw7acSkEZOv4j5Pulhv7omFTCLnG4JtDq3j4OGZCIqRu7EuUan2rFANNym01E2UCrHhYQYCnwiztlnUArAaPQ8_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A
+#### Lateral Dynamics
+- Steering control using bicycle models.  
+  **Resource**: [Lateral Dynamics of Bicycle Model](https://example.com/lateral-dynamics)  
+  **Advanced**: [Linear Tire Model with Varying Parameters](https://hal.archives-ouvertes.fr/hal-01690792/document)
 
-# Dynamic 2D modelling
+#### 2D/Kinetic Modeling
+- [Dynamic 2D Modeling (Chalmers)](http://publications.lib.chalmers.se/records/fulltext/244369/244369.pdf)  
+- [Kinetic Modeling Primer](https://example.com/kinetic-modeling)
 
-http://publications.lib.chalmers.se/records/fulltext/244369/244369.pdf
+### Safety Assurance
+- **Key Study**: [Driving to Safety (RAND Corporation)](https://rand.org/pubs/research_reports/RR1478.html)  
+- **Focus**: Risk quantification, fail-safe mechanisms, validation frameworks.
 
-# Longitudinal Vehicle Dynamics
+---
 
-https://link.springer.com/chapter/10.1007%2F978-1-4614-1433-9_4
+## Operational Design Domain (ODD)
+Defines the conditions under which the autonomous system operates:
+- **Geographic**: Urban vs. highway.
+- **Environmental**: Weather, lighting.
+- **Traffic**: Density, road types.
+- **Speed Limits**: Operational thresholds.
 
-# Supplementary Reading: Lateral Dynamics of Bicycle Model
+---
 
-https://d3c33hcgiwev3.cloudfront.net/vjVDuyDXEemj-RKX93anOA_be4b8ab020d711e9a1134155eeec67a0_Lateral-Vehicle-Dynamics.pdf?Expires=1593648000&Signature=Zy-euUgyW6QSFt5NykcoGYipkimPUvvUUKu-ths0Ie2oDFQERe8J0Di3NR0F0iKUPzc3m5hMmzq978FfJf-byuw7acSkEZOv4j5Pulhv7omFTCLnG4JtDq3j4OGZCIqRu7EuUan2rFANNym01E2UCrHhYQYCnwiztlnUArAaPQ8_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A
+## References
+1. KITTI Dataset: http://www.cvlibs.net/datasets/kitti/
+2. Vehicle Dynamics Models: [Springer](https://link.springer.com), [Chalmers](http://publications.lib.chalmers.se)
+3. Safety Framework: [RAND Study](https://rand.org/pubs/research_reports/RR1478.html)
 
-# Vehicle Actuation
+---
 
-# A new linear tire model with varying parameters
-
-https://hal.archives-ouvertes.fr/hal-01690792/document
+## Contributing
+Contributions are welcome!  
+1. Fork the repository.  
+2. Submit a PR with clear documentation/testing.  
+3. Adhere to [SAE J3016](https://www.sae.org/standards/content/j3016_202104/) standards for automation levels.
