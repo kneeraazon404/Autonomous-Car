@@ -1,6 +1,6 @@
 # Autonomous Vehicle System: Perception, Decision-Making, and Dynamics
 
-![Autonomous Vehicle Concept](https://via.placeholder.com/800x400.png?text=Autonomous+Vehicle+System)  
+![Autonomous Vehicle Concept]
 *Example: Autonomous vehicle perception and control pipeline.*
 
 A comprehensive repository for understanding the technical components of autonomous vehicles, including **environment perception**, **decision-making**, **vehicle dynamics**, and **safety assurance**. This project aligns with SAE automation levels (0–5) and integrates key research on kinetic/dynamic modeling, ODD, and OEDR.
